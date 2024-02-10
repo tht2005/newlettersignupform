@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    color: hsl(212, 24%, 26%);
+}
+
+body {
+    background: hsl(212, 24%, 26%);
+}
+
+#frame, #fin-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+}
+
+#frame {
+    width: 60%;
+    height: 60%;
+}
+
+#frame > div {
+    height: 100%;
+    width: 50%;
+}
+
+#decoration {
+    background-image: url('assets/images/illustration-sign-up-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 500;
+}
+#wrongMsg {
+    color: hsl(358, 79%, 66%);
+    text-align: right;
+    display: none;
+}
+
+#fin-frame {
+    height: 60%;
+    aspect-ratio: 1/1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+    box-sizing: border-box;
+    display: none;
+}
+#fin-frame > div:nth-child(2) {
+    font-size: 200%;
+    font-weight: 700;
+}
+#fin-frame > div:nth-child(3) {
+    font-size: 65%;
+    font-weight: 400;
+}
+#fin-frame > div:nth-child(3) > span {
+    font-weight: 500;
+}
+
+#success-icon {
+    background-image: url('assets/images/icon-success.svg');
+    background-size:cover;
+    aspect-ratio: 1/1;
+    width: 12%;
+}
+
+input[type="submit"], button {
+    border: 0;
+    outline: none;
+    background: hsl(212, 24%, 26%);
+    color: white;
+    border-radius: 5px;
+    height: 15%;
+    width: 100%;
+    font-weight: 500;
+}
+input[type="submit"]:hover, button:hover {
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    height: 30%;
+}
+
+input[type="email"] {
+    height: 40%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid hsl(239, 57%, 85%);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2% 5%;
+}
+
+form > div, #content-container {
+    display: flex;
+    justify-content: space-between;
+}
+form > div {
+    width: 100%;
+}
+
+#content-container > div:nth-child(1) {
+    flex-grow: 2;
+    font-size: 210%;
+    font-weight: 700;
+}
+#content-container > div:nth-child(2) {
+    flex-grow: 2;
+    font-size: 14px;
+}
+ul {
+    flex-grow: 2;
+    list-style-image: url('assets/images/icon-list.svg');
+    list-style-position: inside;
+    width: 100%;
+    padding: 0;
+}
+li::marker {
+    display: none;
+}
+form {
+    width: 100%;
+    flex-grow: 4;
+}
+form > * {
+    margin: 1% 0;
+}
+
+#content-container {
+    flex-direction: column;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 980px) {
+    #frame, #fin-frame {
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: none;
+        flex-direction: column;
+        padding: 0;
+    }
+    #frame > div {
+        width: 100%;
+    }
+    #decoration {
+        order: 1;
+        background-image: url('assets/images/illustration-sign-up-mobile.svg');
+        background-size: cover;
+        height: 50% !important;
+    }
+    #content-container {
+        order: 2;
+    }
+
+    #content-container > div:nth-child(1) {
+        flex-grow: 2;
+    }
+    #content-container > div:nth-child(2) {
+        flex-grow: 2;
+    }
+    ul {
+        flex-grow: 2;
+        font-size: 150%;
+    }
+    form {
+        flex-grow: 4;
+    }
+
+    label {
+        font-size: 15px;
+    }
+    input[type="email"] {
+        padding: 2% 3%;
+    }
+    #content-container > div:nth-child(1) {
+        font-size: 300%;
+    }
+    #content-container > div:nth-child(2) {
+        font-size: 150%;
+    }
+
+    #fin-frame {
+        padding: 40% 8% 5%;
+    }
+    #success-icon {
+        width: 20%;
+    }
+    #fin-frame > div:nth-child(2) {
+        height: 10%;
+        font-size: 250%;
+    }
+    #fin-frame > div:nth-child(3) {
+        height: 10%;
+        font-size: 150%;
+    }
+    button {
+        height: 10%;
+        margin-top: 80%;
+        font-size: 120%;
+    }
+}
